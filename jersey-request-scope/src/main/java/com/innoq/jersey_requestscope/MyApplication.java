@@ -19,16 +19,16 @@ public class MyApplication extends ResourceConfig {
                     bind(MovieSearcherJob.class)
                         .to(MovieSearcherJob.class);
 
-                    /*
                     bindFactory(MovieFinderFactory.class)
                         .to(MovieFinder.class)
                         .in(RequestScoped.class)
                         ;
-                    */
 
+                    /*
                     bindFactory(ThreadLocalMovieFinderFactory.class)
                         .to(MovieFinder.class)
                         ;
+                    */
                 }
             });
     }

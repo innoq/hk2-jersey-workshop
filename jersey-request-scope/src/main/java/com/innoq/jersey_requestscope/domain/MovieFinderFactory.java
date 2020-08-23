@@ -9,10 +9,13 @@ public class MovieFinderFactory implements Factory<MovieFinder> {
 
     @Override
     public MovieFinder provide() {
-        return new MovieFinderImpl();
+        final MovieFinder f = new MovieFinderImpl();
+        System.err.println("Providing " + f);
+        return f;
     }
 
     @Override
-    public void dispose(MovieFinder _ignored) {
+    public void dispose(MovieFinder finder) {
+        finder.done();
     }
 }

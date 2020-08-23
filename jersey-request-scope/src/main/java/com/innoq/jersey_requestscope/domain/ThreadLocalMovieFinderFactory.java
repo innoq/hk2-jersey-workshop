@@ -16,11 +16,17 @@ public class ThreadLocalMovieFinderFactory implements Factory<MovieFinder> {
 
     @Override
     public MovieFinder provide() {
-        return MOVIE_FINDER.get();
+        final MovieFinder f = MOVIE_FINDER.get();
+        System.err.println("Providing " + f);
+        return f;
     }
 
     @Override
-    public void dispose(MovieFinder _ignored) {
-        MOVIE_FINDER.remove();
+    public void dispose(MovieFinder finder) {
+        finder.done();
+        if (finder == MOVIE_FINDER.get()) {
+            System.err.println("Removing " + finder);
+            MOVIE_FINDER.remove();
+        }
     }
 }
