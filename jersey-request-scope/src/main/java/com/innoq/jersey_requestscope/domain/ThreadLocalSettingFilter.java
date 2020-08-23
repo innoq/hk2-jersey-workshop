@@ -9,7 +9,7 @@ import javax.ws.rs.ext.Provider;
 
 import org.glassfish.hk2.api.Factory;
 
-@Provider
+//@Provider
 public class ThreadLocalSettingFilter
     implements ContainerRequestFilter, ContainerResponseFilter {
 
