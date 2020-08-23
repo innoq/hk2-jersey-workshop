@@ -1,6 +1,5 @@
 package com.innoq.jersey_requestscope;
 
-import com.innoq.jersey_requestscope.domain.MovieFinder;
 import com.innoq.jersey_requestscope.domain.MovieSearcher;
 import com.innoq.jersey_requestscope.domain.MovieSearcherJob;
 
@@ -27,7 +26,7 @@ public class MyResourceRunInScope {
 
     @Inject
     public MyResourceRunInScope(final MovieSearcher searcher, final Provider<MovieSearcherJob> jobProvider,
-                      final MovieFinder finder, final RequestScope requestScope) {
+                      final RequestScope requestScope) {
         this.searcher = searcher;
         EX.scheduleAtFixedRate(() -> requestScope.runInScope(() -> jobProvider.get().run()),
             0, 5, TimeUnit.SECONDS);
