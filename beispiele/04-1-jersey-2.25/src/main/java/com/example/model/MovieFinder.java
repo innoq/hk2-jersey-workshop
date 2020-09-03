@@ -7,4 +7,3 @@ import org.jvnet.hk2.annotations.Contract;
 public interface MovieFinder {
     Stream<Movie> findAll();
 }
-
