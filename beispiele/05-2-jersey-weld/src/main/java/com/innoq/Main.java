@@ -16,8 +16,15 @@ import org.glassfish.grizzly.http.server.HttpServer;
  */
 public class Main {
     // Base URI the Grizzly HTTP server will listen on
-    private static final URI BASE_URI = URI.create("http://localhost:8080/myapp/");
+    public static final URI BASE_URI = URI.create("http://localhost:8080/myapp/");
     public static final String ROOT_HELLO_PATH = "myresource";
+
+    public static HttpServer startServer() throws IOException {
+        ResourceConfig resourceConfig = new ResourceConfig(MyResource.class);
+        HttpServer server = GrizzlyHttpServerFactory.createHttpServer(BASE_URI, resourceConfig, false);
+        server.start();
+        return server;
+    }
 
     /**
      * Main method.
@@ -28,11 +35,9 @@ public class Main {
         try {
             System.out.println("\"Hello World\" Jersey Example App");
 
-            ResourceConfig resourceConfig = new ResourceConfig(MyResource.class);
-            HttpServer server = GrizzlyHttpServerFactory.createHttpServer(BASE_URI, resourceConfig, false);
+            HttpServer server = startServer();
             Runtime.getRuntime().addShutdownHook(new Thread(server::shutdownNow));
 
-            server.start();
 
             System.out.println("Application started.\nTry out");
             System.out.println(String.format("%s%s", BASE_URI, ROOT_HELLO_PATH));
@@ -43,5 +48,6 @@ public class Main {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
 }
 
