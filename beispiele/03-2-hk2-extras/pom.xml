@@ -21,6 +21,16 @@
       <version>${hk2.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.glassfish.hk2</groupId>
+      <artifactId>hk2-configuration-integration</artifactId>
+      <version>${hk2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.hk2</groupId>
+      <artifactId>hk2-property-file</artifactId>
+      <version>${hk2.version}</version>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13</version>
