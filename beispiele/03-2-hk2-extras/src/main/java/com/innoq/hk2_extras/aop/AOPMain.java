@@ -7,7 +7,7 @@ import org.glassfish.hk2.utilities.ServiceLocatorUtilities;
 
 public class AOPMain {
     public static void main(String[] args) {
-        ServiceLocator locator = ServiceLocatorFactory.getInstance().create("operation");
+        ServiceLocator locator = ServiceLocatorFactory.getInstance().create("aop");
         ServiceLocatorUtilities.addClasses(locator, DefaultInterceptionService.class);
         ServiceLocatorUtilities.addClasses(locator, LoggingInterceptor.class, MyService.class);
 

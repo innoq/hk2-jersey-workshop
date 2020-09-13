@@ -7,7 +7,7 @@ import org.glassfish.hk2.utilities.ServiceLocatorUtilities;
 
 public class PubSubMain {
     public static void main(String[] args) {
-        ServiceLocator locator = ServiceLocatorFactory.getInstance().create("operation");
+        ServiceLocator locator = ServiceLocatorFactory.getInstance().create("pubsub");
         ServiceLocatorUtilities.addClasses(locator, Publisher.class, Subscriber.class);
         ExtrasUtilities.enableTopicDistribution(locator);
 
