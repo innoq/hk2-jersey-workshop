@@ -12,4 +12,17 @@ public class MyResource {
         return "Hello, " + name;
     }
 
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    @Path("null")
+    public String nullThrow() {
+        throw new NullPointerException("ouch");
+    }
+
+    @GET
+    @Selected
+    @Path("special")
+    public String special() {
+        return "I'm special";
+    }
 }
