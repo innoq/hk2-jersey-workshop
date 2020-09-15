@@ -41,11 +41,14 @@ public class MyApplication extends ResourceConfig {
                         ;
                     */
 
+                    /*
                     bind(TransactionScopeContext.class)
                         .to(OperationContext.class)
                         .to(new ParameterizedTypeImpl(Context.class, new Type[] { TransactionScope.class }))
                         .in(Singleton.class)
                         ;
+                     */
+                    addActiveDescriptor(TransactionScopeContext.class);
                     bind(OperationManagerImpl.class)
                         .to(OperationManager.class)
                         .in(Singleton.class)
