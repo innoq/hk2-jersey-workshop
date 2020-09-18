@@ -8,6 +8,6 @@ import java.util.Set;
 public class MyApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
-        return new HashSet<>(Arrays.asList(MyResource.class, MyExceptionMapper.class, MyFeature.class));
+        return new HashSet<>(Arrays.asList(MyResource.class, MyExceptionMapper.class, MyFeature.class, MyDynamicFilter.class));
     }
 }

@@ -25,4 +25,11 @@ public class MyResource {
     public String special() {
         return "I'm special";
     }
+
+    @GET
+    @Path("dynamic")
+    public String dynamic(@QueryParam("name") @DefaultValue("world") String name) {
+        return "Hello, " + name;
+    }
+
 }
