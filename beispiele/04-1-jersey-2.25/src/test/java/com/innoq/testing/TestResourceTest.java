@@ -1,4 +1,4 @@
-package com.innoq.jersey_extras;
+package com.innoq.testing;
 
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTestNg;

@@ -1,4 +1,4 @@
-package com.innoq.jersey_extras;
+package com.innoq.testing;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
